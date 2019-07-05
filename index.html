@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+    <link href="./style.css" rel="stylesheet" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+    <title>PM demo</title>
+  </head>
+  <body>
+    <div id="app">
+      <v-app>
+        <v-content>
+          <v-container fluid>
+            <v-card>
+              <v-card-title primary-title>
+                <v-layout row wrap>
+                  <v-flex lg8>
+                    <h3 class="display-3 deep-purple--text">PM demo</h3>
+                    <p>Get random number</p>
+                  </v-flex>
+                  <v-flex lg4>
+                    <div style="display: flex;">
+                      <v-spacer></v-spacer>
+                      <img
+                        src="./images/vue-logo.png"
+                        alt=""
+                        class="logo"
+                        title="Vue"
+                      />
+                      <v-divider vertical class="mx-3"></v-divider>
+                      <img
+                        src="./images/vuetify-logo.png"
+                        alt=""
+                        class="logo"
+                        title="Vuetify"
+                      />
+                    </div>
+                  </v-flex>
+                </v-layout>
+              </v-card-title>
+
+              <v-card-text>
+                <v-layout row wrap>
+                  <v-flex lg4>
+                    <label>Input min number</label>
+                    <v-text-field
+                      placeholder="Input number"
+                      solo
+                      v-model="min"
+                      type="number"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex lg8></v-flex>
+                  <v-flex lg4>
+                    <label>Input max number</label>
+                    <v-text-field
+                      placeholder="Placeholder"
+                      solo
+                      v-model="max"
+                      input="number"
+                      type="number"
+                      :hint="max<min?'Max must lager than min':''"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex lg8></v-flex>
+                  <v-flex lg4>
+                    <label>Result</label>
+                    <v-text-field
+                      readonly
+                      solo
+                      v-model="result"
+                      input="number"
+                      type="number"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex lg8></v-flex>
+                </v-layout>
+              </v-card-text>
+            </v-card>
+          </v-container>
+        </v-content>
+      </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
